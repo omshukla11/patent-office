@@ -1,19 +1,35 @@
 ﻿@inherits LayoutComponentBase
 
 <PageTitle>patent</PageTitle>
-
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+        @if (left is not null)
+        {
+                <img src="@left" width="40%"/>
+        }
+        @if (right is not null)
+        {
+            <img src="@right" width="9%"/>
+        }
+  </div>
+</nav>
 <div class="page">
+
+
     <div class="sidebar">
         <NavMenu />
     </div>
 
     <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
 
         <article class="content px-4">
             @Body
         </article>
     </main>
+    <div class="sidebar">
+        <NavMenu />
+    </div>
 </div>
+@code {
+    private string? left = "Images/head.png", right = "Images/logo.png";
+}

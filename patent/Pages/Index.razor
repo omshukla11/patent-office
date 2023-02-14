@@ -1,9 +1,15 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.Components.Web
+<PageTitle>Home page</PageTitle>
 
-<PageTitle>Index</PageTitle>
+<div class="container text-center">
+    <div class="row">
+        @for(int i = 1; i <= 30; i++)
+{
+        <div class="col-md-3 col-xs-2">
+            <button style="border:2px #166534 solid;width:80%;padding:10px;margin:10px" type="button" class="btn btn-outline-success btn-lg">Form @i</button>
+        </div>
+}
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+    </div>
+</div>
