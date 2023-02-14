@@ -4,166 +4,227 @@
 
 <h3 class="text-center">Filing Application For Grant of GI - Form 1A</h3>
 <h6 class="text-center" style="color: blue ; font-weight:800">Note: Fields With <span style="color:red">*</span> are Mandatory</h6>
-<h6 class="text-center">You are requested to register the accompanying in</h6>
 <div class="container text-center" style="margin-top: 5rem">
     @* input - idc class - dropdown *@
     <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
+        <div class="col-3 fs-5 text-start">
             <label for="inputPassword5" class="form-label">Types of Goods </label>
         </div>
         <div class="col-9">
-            <select id="goods" class="form-select" style="border-color: #346002">
+            <select id="goods" class="form-select" style="border-color: #8B4500">
                 <option>Select</option>
                 <option>Select</option>
                 <option>Select</option>
             </select>
         </div>
     </div>
-    @* input - type - dropdown *@
+    @* input - geographical indication- textfield *@
     <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
+        <div class="col-3 fs-5 text-start">
             <label for="inputPassword5" class="form-label">Name of Geogrphaical Indication (and particulars) </label>
         </div>
         <div class="col-9">
-            <input type="text" id="inidcation" class="form-control" placeholder="Geographical Indication" style="border-color: #346002">
+            <input type="text" id="inidcation" class="form-control" placeholder="Geographical Indication" style="border-color: #8B4500">
         </div>
     </div>
-    @* input - name - textfield *@
+    @* input - class - textfield *@
     <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
+        <div class="col-3 fs-5 text-start">
             <label for="inputPassword5" class="form-label">Class  </label>
         </div>
         <div class="col-9">
-            <input type="text" id="class" class="form-control" placeholder="Class" style="border-color: #346002">
+            <input type="text" id="class" class="form-control" placeholder="Class" style="border-color: #8B4500">
         </div>
     </div>
-    @* input - address - textfield *@
+    @* input - application type - radiobutton *@
     <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Application Address : </label>
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">Application Type : </label>
+        </div>
+        <div class="col-2 form-check fs-5">
+            <input type="radio" class="form-check-input" id="home" name="optradio" value="Home" checked>Home Country
+            <label class="form-check-label text-start" for="home"></label>
+        </div>
+        <div class="col-2 form-check fs-5">
+            <input type="radio" class="form-check-input" id="foreign" name="optradio" value="Foreign" checked>Foreign Country
+            <label class="form-check-label text-start" for="home"></label>
+        </div>
+    </div>
+    <hr/>
+    <div class="text-start" style="margin-top:1.05rem">
+        <h5><u style="color: #8B4500">Application Details</u></h5>
+    </div>
+    @* input - application name - textfield *@
+    <div class="row" style="margin-top: 2rem">
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">Applicant Name : </label>
         </div>
         <div class="col-9">
-            <input type="text" id="address" class="form-control" placeholder="Applicant Address" style="border-color: #346002">
-        </div>
+            <input type="text" id="applicant-name" class="form-control" placeholder="Applicant Name" style="border-color:#8B4500">
+        </div>   
     </div>
-    @* input - origin - 3 dropdown *@
+    @* input - application address - textfield *@
     <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Application Origin : </label>
-        </div>
-        <div class="col-3">
-            <select id="country" class="form-select" style="border-color: #346002">
-                <option>Country</option>
-                <option>Select</option>
-                <option>Select</option>
-            </select>
-        </div>
-        <div class="col-3">
-            <select id="nationality" class="form-select" style="border-color: #346002">
-                <option>Nationality</option>
-                <option>Select</option>
-                <option>Select</option>
-            </select>
-        </div>
-        <div class="col-3">
-            <select id="state" class="form-select" style="border-color: #346002">
-                <option>State</option>
-                <option>Select</option>
-                <option>Select</option>
-            </select>
-        </div>
-    </div>
-    @* input - multiple applicants *@
-    <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Multiple Applicants : </label>
-        </div>
-        <div class="col-4">
-            <input type="text" id="multiple-applicant" class="form-control" placeholder="Add Applicant" style="background-color:#346002; color: white">
-        </div>
-    </div>
-    @* input - multiple articles *@
-    <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Multiple Articles : </label>
-        </div>
-        <div class="col-4">
-            <input type="text" id="multiple-articles" class="form-control" placeholder="Add Articles" style="background-color:#346002; color: white">
-        </div>
-    </div>
-    @* input - applicant type *@
-    <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Applicant Type : </label>
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">Applicant Address : </label>
         </div>
         <div class="col-9">
-            <select id="application-type" class="form-select" style="border-color: #346002">
-                <option>Select</option>
-                <option>Select</option>
-                <option>Select</option>
-            </select>
+            <input type="text" id="applicant-address" class="form-control" placeholder="Applicant Address" style="border-color:#8B4500">
         </div>
     </div>
-    @* input - previously registered *@
+    @* input - city/twon *@
     <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Previously Redg. Class(es) : </label>
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">City/Town </label>
         </div>
         <div class="col-9">
-            <input type="text" id="previously-registered" class="form-control" placeholder="Previously Registered Class(es)" style="border-color: #346002">
+            <input type="text" id="city-town" class="form-control" placeholder="City/Town" style="border-color:#8B4500">
         </div>
     </div>
-    @* input - under no *@
+    @* input - state  *@
     <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Under No : </label>
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">State(if your country India) </label>
         </div>
         <div class="col-9">
-            <input type="text" id="under-no" class="form-control" placeholder="Under No" style="border-color: #346002">
+            <input type="text" id="state" class="form-control" placeholder="State (if your country India)" style="border-color:#8B4500">
         </div>
     </div>
-    @* input - address of service *@
+    @* input - pincode *@
     <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Address of Service : </label>
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">Pincode </label>
         </div>
         <div class="col-9">
-            <input type="text" id="address-service" class="form-control" placeholder="Address of service" style="border-color: #346002">
+            <input type="text" id="oincode" class="form-control" placeholder="Pincode" style="border-color: #8B4500">
         </div>
     </div>
-    @* input - email-id *@
+    @* input - country *@
     <div class="row" style="margin-top: 2rem">
-        <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Email ID : </label>
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">Country </label>
         </div>
         <div class="col-9">
-            <input type="email" id="aemail-id" class="form-control" placeholder="Email Id" style="border-color: #346002">
+            <input type="text" id="country" class="form-control" placeholder="India" style="border-color: #8B4500">
         </div>
     </div>
-    @* input - phone number *@
-    <div class="row" style="margin-top: 2rem ; margin-bottom: 2rem">
-        <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Phone Number : </label>
+    <hr />
+    <div class="text-start" style="margin-top:1.05rem">
+        <h5><u style="color: #8B4500">Application Details</u></h5>
+    </div>
+    <div class="text-start" style="margin-top:1.05rem">
+        <h5 style="color:blue">Address of Communication will be considered as address of service</h5>
+    </div>
+    @* input - checkbox *@
+    <div class="mb-3 form-check text-start" style="margin-top:1rem;">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <h5>
+            <label class="form-check-label text-start" for="exampleCheck1" style="margin-left: 1rem">
+                Same as applicant address
+            </label>
+        </h5>
+    </div>
+    @* input - application name - textfield *@
+    <div class="row" style="margin-top: 2rem">
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">Applicant Name : </label>
         </div>
-        <div class="col-1">
-            <h4>+91</h4>
+        <div class="col-9">
+            <input type="text" id="applicant-name" class="form-control" placeholder="Applicant Name" style="border-color:#8B4500">
         </div>
-        <div class="col-8">
-            <input type="text" id="mobile" class="form-control" placeholder="Mobile No." style="border-color: #346002">
+    </div>
+    @* input - application address - textfield *@
+    <div class="row" style="margin-top: 2rem">
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">Applicant Address : </label>
+        </div>
+        <div class="col-9">
+            <input type="text" id="applicant-address" class="form-control" placeholder="Applicant Address" style="border-color:#8B4500">
+        </div>
+    </div>
+    @* input - city/twon *@
+    <div class="row" style="margin-top: 2rem">
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">City/Town </label>
+        </div>
+        <div class="col-9">
+            <input type="text" id="city-town" class="form-control" placeholder="City/Town" style="border-color:#8B4500">
+        </div>
+    </div>
+    @* input - state  *@
+    <div class="row" style="margin-top: 2rem">
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">State(if your country India) </label>
+        </div>
+        <div class="col-9">
+            <input type="text" id="state" class="form-control" placeholder="State (if your country India)" style="border-color:#8B4500">
+        </div>
+    </div>
+    @* input - pincode *@
+    <div class="row" style="margin-top: 2rem">
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">Pincode </label>
+        </div>
+        <div class="col-9">
+            <input type="text" id="oincode" class="form-control" placeholder="Pincode" style="border-color: #8B4500">
+        </div>
+    </div>
+    @* input - country *@
+    <div class="row" style="margin-top: 2rem">
+        <div class="col-3 fs-5 text-start">
+            <label for="inputPassword5" class="form-label">Country </label>
+        </div>
+        <div class="col-9">
+            <input type="text" id="country" class="form-control" placeholder="India" style="border-color: #8B4500">
+        </div>
+    </div>
+    <hr />
+    <div class="text-start" style="margin-top:1.05rem">
+        <h5><u style="color: #8B4500">Applicants</u></h5>
+    </div>
+    <div class="text-start" style="margin-top:1.05rem">
+        <h5>Username</h5>
+    </div>
+    @* input - add applicat *@
+    <div class="row" style="margin-top: 0.5rem; margin-left:0.075rem">
+        <div class="col-3 fs-5 text-start" style="background-color:#8B4500; border-radius:5px">
+            <label for="inputPassword5" class="form-label" style="margin-top:0.2rem; color:white">Add Applicant </label>
+        </div>
+        <div class="col-9">
+            <input type="text" id="add-applicant" class="form-control" placeholder="Add applicant" style="border-color: #8B4500">
+        </div>
+    </div>
+    <hr />
+    <div class="text-start" style="margin-top:1.05rem">
+        <h5><u style="color: #8B4500">Facilitator</u></h5>
+    </div>
+    @* input - add applicat *@
+    <div class="row" style="margin-top: 0.5rem; margin-left:0.075rem">
+        <div class="col-3 fs-5 text-start" style="background-color:#8B4500; border-radius:5px">
+            <label for="inputPassword5" class="form-label" style="margin-top:0.2rem; color:white">Add Facilitator </label>
+        </div>
+        <div class="col-9">
+            <input type="text" id="add-applicant" class="form-control" placeholder="Add applicant" style="border-color: #8B4500">
         </div>
     </div>
     @* input - checkbox *@
-    <div class="mb-3 form-check">
+    <div class="mb-3 form-check text-start" style="margin-top:1rem">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label text-end" for="exampleCheck1">
-            The applicant(s) claims to be the proprieter(s) of the design and that to the best of his knowledge the design is new or original
+            I agree that the above information submitted by me are true to my best knowledge
         </label>
     </div>
 
     @* input - save button *@
     <div class="row text-start" style="margin-top: 2rem ; margin-bottom: 2rem">
         <div class="col-3">
-            <button type="button" class="btn" style="width: 10rem; font-size:1.3rem ; background-color: #346002 ; color:white">Save</button>
+            <button type="button" class="btn" style="width: 10rem; font-size:1.3rem ; background-color: #8B4500 ; color:white">Save</button>
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn" style="width: 10rem; font-size:1.3rem ; background-color: #8B4500 ; color:white">Reset</button>
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn" style="width: 10rem; font-size:1.3rem ; background-color: #8B4500 ; color:white">Set</button>
         </div>
     </div>
 
