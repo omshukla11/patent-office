@@ -1,48 +1,102 @@
 ﻿@page "/fetchdata"
 
-<PageTitle>Weather forecast</PageTitle>
 
-@using patent.Data
-@inject WeatherForecastService ForecastService
+<PageTitle>Create New User  and User Priveleges</PageTitle>
 
-<h1>Weather forecast</h1>
+<h1 class="text-center">Create New User  and User Priveleges</h1>
 
-<p>This component demonstrates fetching data from a service.</p>
 
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
+
+    <div class="container text-center" style="margin-top:5rem">
+        <div class="row align-items-start" style="margin-top:1rem">
+
+            <div class="col-3 fs-4 text-start">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+            </div>
+            <div class="col-9 ">
+                <input type="text" class="form-control" id="exampleInputEmail1" style="border-color: #8B4500">
+
+            </div>
+
+        </div>
+        <div class="row align-items-start" style="margin-top:1rem">
+            <div class="col-3 fs-4 text-start">
+                <label for="exampleInputEmail1" class="form-label">Privileges</label>
+            </div>
+            <div class="col-9 ">
+                <div class="container">
+                    <div class="row align-items-start">
+                        <div class="col text-start">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Front Office </label>
+                        </div>
+                        <div class="col text-center">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">E D P</label>
+                        </div>
+                        <div class="col text-end">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                            <label class="form-check-label" for="inlineCheckbox3">Query Menu</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row align-items-start" style="margin-top:1rem">
+            <div class="col-3 fs-4 text-start">
+                <label for="exampleInputEmail1" class="form-label">Designation</label>
+            </div>
+            <div class="col-9 ">
+                <input type="text" class="form-control" id="exampleInputEmail1" style="border-color: #8B4500">
+
+            </div>
+
+        </div>
+        <div class="row align-items-start" style="margin-top:1rem">
+            <div class="col-3 fs-4 text-start">
+                <label for="exampleInputEmail1" class="form-label">Login ID </label>
+            </div>
+            <div class="col-9 ">
+                <input type="text" class="form-control" id="exampleInputEmail1" style="border-color: #8B4500">
+
+            </div>
+
+        </div>
+        <div class="row align-items-start" style="margin-top:1rem">
+            <div class="col-3 fs-4 text-start">
+                <label for="exampleInputEmail1" class="form-label">Password</label>
+            </div>
+            <div class="col-9 ">
+                <input type="password" class="form-control" id="exampleInputEmail1" style="border-color: #8B4500">
+
+            </div>
+
+        </div>
+        <br />
+        <div class="row align-items-start" style="margin-top:1rem">
+            <div class="col-3 fs-4 text-start">
+            </div>
+            <div class="col-9 text-start">
+                <button class="btn btn-primary align-start" type="submit" style="background-color: #8B4500; border-color:#8B4500">SUBMIT</button>
+                <button class="btn btn-primary align-start" type="submit" style="background-color: #8B4500; border-color:#8B4500">EDIT USER PRIVELEGES</button>
+
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <br />
+    <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th class="text-center" style="background-color: #8B4500;color:white">Login_ID</th>
+                <th class="text-center" style="background-color: #8B4500;color:white">Name</th>
+                <th class="text-center" style="background-color: #8B4500;color:white">Designation</th>
+                <th class="text-center" style="background-color: #8B4500;color:white">Privelege</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
         </tbody>
     </table>
-}
 
-@code {
-    private WeatherForecast[]? forecasts;
-
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-    }
-}
