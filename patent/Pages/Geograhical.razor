@@ -1,18 +1,18 @@
-﻿@page "/counter"
+﻿@page "/geographical"
 
-<PageTitle>MainForm</PageTitle>
+<PageTitle>Geographical Data</PageTitle>
 
-<h1 class="text-center">Application for Registrations of Designs</h1>
-<h6 class="text-center">[Section 5 and 44]</h6>
+<h3 class="text-center">Filing Application For Grant of GI - Form 1A</h3>
+<h6 class="text-center" style="color: blue ; font-weight:800">Note: Fields With <span style="color:red">*</span> are Mandatory</h6>
 <h6 class="text-center">You are requested to register the accompanying in</h6>
 <div class="container text-center" style="margin-top: 5rem">
     @* input - idc class - dropdown *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">IDC Class : </label>
+            <label for="inputPassword5" class="form-label">Types of Goods </label>
         </div>
         <div class="col-9">
-            <select id="idc" class="form-select" style="border-color: #346002">
+            <select id="goods" class="form-select" style="border-color: #346002">
                 <option>Select</option>
                 <option>Select</option>
                 <option>Select</option>
@@ -22,23 +22,19 @@
     @* input - type - dropdown *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Application Type : </label>
+            <label for="inputPassword5" class="form-label">Name of Geogrphaical Indication (and particulars) </label>
         </div>
         <div class="col-9">
-            <select id="type" class="form-select" style="border-color: #346002">
-                <option>Select</option>
-                <option>Select</option>
-                <option>Select</option>
-            </select>
+            <input type="text" id="inidcation" class="form-control" placeholder="Geographical Indication" style="border-color: #346002">
         </div>
     </div>
     @* input - name - textfield *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-4 text-start">
-            <label for="inputPassword5" class="form-label">Application Name : </label>
+            <label for="inputPassword5" class="form-label">Class  </label>
         </div>
         <div class="col-9">
-            <input type="text" id="name" class="form-control" placeholder="Applicant Name" style="border-color: #346002">
+            <input type="text" id="class" class="form-control" placeholder="Class" style="border-color: #346002">
         </div>
     </div>
     @* input - address - textfield *@
