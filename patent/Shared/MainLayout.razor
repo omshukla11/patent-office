@@ -5,18 +5,18 @@
   <div class="container-fluid">
         @if (left is not null)
         {
-            <img src="@left" width="40%"/>
+            <img src="@left" width="30%"/>
         }
         @if (right is not null)
         {
-            <img src="@right" width="9%"/>
+            <img src="@right" width="7%"/>
         }
   </div>
 </nav>
 <div class="page">
 
 
-    <div class="sidebar">
+    <div style="background-image:none;background-color:#166534;" class="sidebar">
         <NavMenu />
     </div>
 
@@ -26,8 +26,8 @@
             @Body
         </article>
     </main>
-    <div class="sidebar">
-        <NavMenu />
+    <div class="" style="background-image:none;background-color:#F5F5F5;">
+        <SideBarLang />
     </div>
 </div>
 @code {
