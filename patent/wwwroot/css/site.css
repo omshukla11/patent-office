@@ -64,10 +64,3 @@ a, .btn-link {
     }
 
 
-/*changed*/
-
-.temp :hover{
-    background-color:grey;
-    color:white;
-
-}

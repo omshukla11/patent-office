@@ -2,17 +2,30 @@
 
 <PageTitle>patent</PageTitle>
 <nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
+    <div class="container-fluid">
         @if (left is not null)
         {
-            <img src="@left" width="30%"/>
+            <img src="@left" width="30%" />
         }
         @if (right is not null)
         {
-            <img src="@right" width="7%"/>
+            <img src="@right" width="7%" />
         }
-  </div>
+    </div>
 </nav>
+<nav class="navbar bg-body-tertiary shadow-sm">
+    <div class="container-fluid">
+        <div class="navbar-brand">Visitors : <span style="color:red">75</span></div>
+        <form class="d-flex" role="search">
+            <div class="p-3 fw-bolder fs-5 text-success">Welcome User</div>
+            <NavLink href="/"><button class="btn btn-lg btn-success m-2" type="">Home</button></NavLink>
+            <NavLink href="/login"> <button class="btn btn-lg btn-success m-2" type="">Signout</button></NavLink>
+
+        </form>
+    </div>
+</nav>
+
+
 <div class="page">
 
 
