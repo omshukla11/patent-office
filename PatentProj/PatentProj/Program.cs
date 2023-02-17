@@ -14,10 +14,12 @@ builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIntegration();
 
 //builder.Services.ConfigureLoggerService();
+//builder.Services.ConfigureMySqlContext(builder.Configuration);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<GIFormContext>(opt => opt.UseInMemoryDatabase("GIFormList"));
 builder.Services.AddDbContext<DesignFormContext>(opt => opt.UseInMemoryDatabase("DesignFormList"));
+builder.Services.AddDbContext<OwnerContext>(opt => opt.UseInMemoryDatabase("OwnerList"));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

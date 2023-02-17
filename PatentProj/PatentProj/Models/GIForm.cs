@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 namespace PatentProj.Models
 {
-	public class GIForm
+    //[Table("GIForm")]
+    public class GIForm
 	{
         public long Id { get; set; }
         public string? FormName { get; set; }
@@ -18,5 +20,9 @@ namespace PatentProj.Models
         public uint PinCode { get; set; }
         public string? Individual_OrganizationName { get; set; }
         public bool IsComplete { get; set; }
+
+        [ForeignKey(nameof(Owner))]
+        public long OwnerId { get; set; }
+        public Owner? Owner { get; set; }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace PatentProj.Models
 {
+    //[Table("DesignForm")]
     public class DesignForm
     {
         public long Id { get; set; }
@@ -21,6 +24,10 @@ namespace PatentProj.Models
         public string? EmailID { get; set; }
         public uint PhoneNo { get; set; }
         public bool IsComplete { get; set; }
+
+        [ForeignKey(nameof(Owner))]
+        public long OwnerId { get; set; }
+        public Owner? Owner { get; set; }
     }
 }
 
