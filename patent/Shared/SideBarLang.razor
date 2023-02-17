@@ -36,7 +36,7 @@
 
 @code {
     private bool collapseNavMenu = true;
-    private string selected = "English";
+    public string selected { get; set; }
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
@@ -70,13 +70,13 @@
 
     private void OnChangeLanguage(String val, String text)
     {
-        Console.WriteLine(val);
-        Console.WriteLine(text);
         var uri = new Uri(NavigationManager.Uri).GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
         var culture = CultureInfo.GetCultureInfo(val);
         var cultureEscaped = Uri.EscapeDataString(culture.Name);
+        Console.WriteLine(cultureEscaped);
         var uriEscaped = Uri.EscapeDataString(uri);
         NavigationManager.NavigateTo($"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}", forceLoad: true);
+
     }
 
 }

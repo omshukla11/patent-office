@@ -1,4 +1,6 @@
-﻿@page "/counter"
+﻿@page "/design"
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<NavMenu> Localizer
 
 <PageTitle>MainForm</PageTitle>
 
@@ -9,7 +11,7 @@
     @* input - idc class - dropdown *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">IDC Class : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["idc"] : </label>
         </div>
         <div class="col-9">
             <select id="idc" class="form-select" style="border-color: #166534">
@@ -22,7 +24,7 @@
     @* input - type - dropdown *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Application Type : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["type"] : </label>
         </div>
         <div class="col-9">
             <select id="type" class="form-select" style="border-color: #166534">
@@ -35,7 +37,7 @@
     @* input - name - textfield *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Application Name : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["name"] : </label>
         </div>
         <div class="col-9">
             <input type="text" id="name" class="form-control" placeholder="Applicant Name" style="border-color: #166534">
@@ -44,7 +46,7 @@
     @* input - address - textfield *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Application Address : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["address"] : </label>
         </div>
         <div class="col-9">
             <input type="text" id="address" class="form-control" placeholder="Applicant Address" style="border-color: #166534">
@@ -53,7 +55,7 @@
     @* input - origin - 3 dropdown *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Application Origin : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["origin"] : </label>
         </div>
         <div class="col-3">
             <select id="country" class="form-select" style="border-color: #166534">
@@ -80,7 +82,7 @@
     @* input - multiple applicants *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Multiple Applicants : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["multiple"] : </label>
         </div>
         <div class="col-4">
             <input type="text" id="multiple-applicant" class="form-control" placeholder="Add Applicant" style="background-color:#166534; color: white">
@@ -90,7 +92,7 @@
     @* input - multiple articles *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Multiple Articles : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["article"] : </label>
         </div>
         <div class="col-4">
             <input type="text" id="multiple-articles" class="form-control" placeholder="Add Articles" style="background-color:#166534; color: white">
@@ -100,7 +102,7 @@
     @* input - applicant type *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Applicant Type : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["type"] : </label>
         </div>
         <div class="col-9">
             <select id="application-type" class="form-select" style="border-color: #166534">
@@ -113,7 +115,7 @@
     @* input - previously registered *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Previously Redg. Class(es) : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["previously"] : </label>
         </div>
         <div class="col-9">
             <input type="text" id="previously-registered" class="form-control" placeholder="Previously Registered Class(es)" style="border-color: #166534">
@@ -122,7 +124,7 @@
     @* input - under no *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Under No : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["num"] : </label>
         </div>
         <div class="col-9">
             <input type="text" id="under-no" class="form-control" placeholder="Under No" style="border-color: #166534">
@@ -131,7 +133,7 @@
     @* input - address of service *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Address of Service : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["service"] : </label>
         </div>
         <div class="col-9">
             <input type="text" id="address-service" class="form-control" placeholder="Address of service" style="border-color: #166534">
@@ -140,7 +142,7 @@
     @* input - email-id *@
     <div class="row" style="margin-top: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Email ID : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["email"] : </label>
         </div>
         <div class="col-9">
             <input type="email" id="aemail-id" class="form-control" placeholder="Email Id" style="border-color: #166534">
@@ -149,7 +151,7 @@
     @* input - phone number *@
     <div class="row" style="margin-top: 2rem ; margin-bottom: 2rem">
         <div class="col-3 fs-5 text-start">
-            <label for="inputPassword5" class="form-label">Phone Number : </label>
+            <label for="inputPassword5" class="form-label">@Localizer["phone"] : </label>
         </div>
         <div class="col-1">
             <h4>+91</h4>
@@ -162,7 +164,7 @@
     <div class="mb-3 form-check text-start">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label text-start" for="exampleCheck1">
-            The applicant(s) claims to be the proprieter(s) of the design and that to the best of his knowledge the design is new or original
+            @Localizer["detail"]
         </label>
     </div>
 
