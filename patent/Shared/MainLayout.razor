@@ -1,4 +1,6 @@
 ﻿@inherits LayoutComponentBase
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<NavMenu> Localizer
 
 <PageTitle>patent</PageTitle>
 <nav class="navbar bg-body-tertiary">
@@ -15,11 +17,11 @@
 </nav>
 <nav class="navbar bg-body-tertiary shadow-sm">
     <div class="container-fluid">
-        <div class="navbar-brand">Visitors : <span style="color:red">75</span></div>
+        <div class="navbar-brand">@Localizer["visitors"] : <span style="color:red">75</span></div>
         <form class="d-flex" role="search">
-            <div class="p-3 fw-bolder fs-5 text-success">Welcome User</div>
-            <NavLink href="/"><button class="btn btn-lg btn-success m-2" type="">Home</button></NavLink>
-            <NavLink href="/login"> <button class="btn btn-lg btn-success m-2" type="">Signout</button></NavLink>
+            <div class="p-3 fw-bolder fs-5 text-success">@Localizer["welcome"]</div>
+            <NavLink href="/"><button class="btn btn-lg btn-success m-2" type="">@Localizer["home"]</button></NavLink>
+            <NavLink href="/login"> <button class="btn btn-lg btn-success m-2" type="">@Localizer["sign"]</button></NavLink>
 
         </form>
     </div>

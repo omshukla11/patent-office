@@ -1,4 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components;
+@using Microsoft.Extensions.Localization
+@using System.Globalization
+@inject NavigationManager NavigationManager
 
 @*<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -12,19 +15,19 @@
 </div> *@
 
 <div class="p-2" @onclick="ToggleNavMenu">
-    <table class="table" >
+    <table class="table">
         @foreach (var language in languages)
         {
             @if (language.Text == selected)
             {
                 <tr class="">
-                    <td style="cursor:pointer" class="px-3 py-2 bg-dark text-white border-bottom border-secondary ">@language.Text</td>
+                    <td style="cursor:pointer" class="px-3 py-2 bg-dark text-white border-bottom border-secondary" @onclick="@(() => OnChangeLanguage(language.Val, language.Text))">@language.Text</td>
                 </tr>
             }
             else
             {
                 <tr class="">
-                    <td style="cursor:pointer" class="px-3 py-2 border-bottom border-secondary ">@language.Text</td>
+                    <td style="cursor:pointer" class="px-3 py-2 border-bottom border-secondary" @onclick="@(() => OnChangeLanguage(language.Val, language.Text))">@language.Text</td>
                 </tr>
             }
         }
@@ -63,6 +66,17 @@
     {
         public string Val { get; set; }
         public string Text { get; set; }
+    }
+
+    private void OnChangeLanguage(String val, String text)
+    {
+        Console.WriteLine(val);
+        Console.WriteLine(text);
+        var uri = new Uri(NavigationManager.Uri).GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+        var culture = CultureInfo.GetCultureInfo(val);
+        var cultureEscaped = Uri.EscapeDataString(culture.Name);
+        var uriEscaped = Uri.EscapeDataString(uri);
+        NavigationManager.NavigateTo($"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}", forceLoad: true);
     }
 
 }

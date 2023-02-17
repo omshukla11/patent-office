@@ -1,9 +1,10 @@
 ﻿@page "/welcomeuser"
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Welcomeuser> Localizer
 
 <PageTitle>Welcome User</PageTitle>
 
-
-<h2 class="text-center" style="margin-top:10rem; margin-left:-5rem">Welcome User</h2>
+<h2 class="text-center" style="margin-top:10rem; margin-left:-5rem">@Localizer["welcome"]</h2>
 <div class="container text-center" style="margin:5rem">
     <div class="row align-items-start" style="margin-top:1rem">
         <div class="col-5text-end" style="margin: 2rem">
@@ -27,5 +28,5 @@
     </div>
 </div>
 @code {
-
+    
 }

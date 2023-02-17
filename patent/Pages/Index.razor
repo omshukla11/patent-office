@@ -1,5 +1,7 @@
 ﻿@page "/"
 @using Microsoft.AspNetCore.Components.Web
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<NavMenu> Localizer
 
 <PageTitle>Home page</PageTitle>
 
@@ -9,7 +11,7 @@
         {
             <div class="col-lg-3 col-md-4 col-xs-2">
                 <NavLink href="/counter">
-                    <button style="border:2px #166534 solid;width:80%;padding:10px;margin:10px" type="button" class="btn btn-outline-success btn-lg">Form</button>
+                    <button style="border:2px #166534 solid;width:80%;padding:10px;margin:10px" type="button" class="btn btn-outline-success btn-lg">@Localizer["form"]</button>
                 </NavLink>
             </div>
         }

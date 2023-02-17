@@ -1,4 +1,6 @@
-﻿
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<NavMenu> Localizer
+
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">
@@ -14,7 +16,7 @@
     <nav class="flex-column">
         <div class="nav-item px-3 py-2 border-bottom">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Quick Form filling
+                <span class="oi oi-home" aria-hidden="true"></span> @Localizer["quick"]
             </NavLink>
         </div>
      
@@ -22,7 +24,7 @@
             {
             <div class="nav-item px-3 py-2  border-bottom">
                     <NavLink class="nav-link" href="dont">
-                    <span class="oi oi-home" aria-hidden="true"></span> Quick Form filling
+                    <span class="oi oi-home" aria-hidden="true"></span> @Localizer["quick"]
                     </NavLink>
                 </div>
             }
