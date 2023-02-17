@@ -14,8 +14,8 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     // You can set the default language using the following method:
     // options.SetDefaultCulture("fr");
-    options.AddSupportedCultures(new[] { "en", "hi", "fr" });
-    options.AddSupportedUICultures(new[] { "en", "hi", "fr" });
+    options.AddSupportedCultures(new[] { "en", "hi", "ta", "de", "bn", "te", "gu", "pa", "mr", "fr", "nl", "kn", "ml" });
+    options.AddSupportedUICultures(new[] { "en", "hi", "ta", "de", "bn", "te", "gu", "pa", "mr", "fr", "nl", "kn", "ml" });
     options.RequestCultureProviders = new List<IRequestCultureProvider>()
     {
         new CookieRequestCultureProvider()
