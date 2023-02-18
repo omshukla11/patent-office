@@ -14,10 +14,12 @@ namespace PatentProj.Controllers
     public class DesignFormsController : ControllerBase
     {
         private readonly DesignFormContext _context;
+        private readonly OwnerContext _ownerContext;
 
-        public DesignFormsController(DesignFormContext context)
+        public DesignFormsController(DesignFormContext context, OwnerContext ownerContext)
         {
             _context = context;
+            _ownerContext = ownerContext;
         }
 
         // GET: api/DesignForms
@@ -89,6 +91,20 @@ namespace PatentProj.Controllers
           {
               return Problem("Entity set 'DesignFormContext.DesignForms'  is null.");
           }
+
+            // Get the owner object based on its id
+            var owner = await _ownerContext.Owners.FindAsync(designForm.OwnerId);
+
+            // If the Owner with the given ID doesn't exist, return a 404 Not Found response
+            if (owner == null)
+            {
+                return BadRequest($"Owner with id {designForm.OwnerId} not found."); ;
+            }
+
+            // Set the Owner navigation property of the GIForm object
+            designForm.Owner = owner;
+
+            _context.DesignForms.Add(designForm);
             _context.DesignForms.Add(designForm);
             await _context.SaveChangesAsync();
 

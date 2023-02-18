@@ -14,10 +14,12 @@ namespace PatentProj.Controllers
     public class GIFormsController : ControllerBase
     {
         private readonly GIFormContext _context;
+        private readonly OwnerContext _ownerContext;
 
-        public GIFormsController(GIFormContext context)
+        public GIFormsController(GIFormContext context,OwnerContext ownerContext)
         {
             _context = context;
+            _ownerContext = ownerContext;
         }
 
         // GET: api/GIForms
@@ -89,10 +91,23 @@ namespace PatentProj.Controllers
           {
               return Problem("Entity set 'GIFormContext.GIForms'  is null.");
           }
+
+            // Get the owner object based on its id
+            var owner = await _ownerContext.Owners.FindAsync(gIForm.OwnerId);
+
+            // If the Owner with the given ID doesn't exist, return a 404 Not Found response
+            if (owner == null)
+                {
+                    return BadRequest($"Owner with id {gIForm.OwnerId} not found."); ;
+                }
+
+                // Set the Owner navigation property of the GIForm object
+                gIForm.Owner = owner;
+
             _context.GIForms.Add(gIForm);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetGIForm), new { id = gIForm.Id }, gIForm);
+            return CreatedAtAction("GetGIForm", new { id = gIForm.Id }, gIForm);
         }
 
         // DELETE: api/GIForms/5

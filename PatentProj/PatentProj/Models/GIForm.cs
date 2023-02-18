@@ -21,7 +21,7 @@ namespace PatentProj.Models
         public string? Individual_OrganizationName { get; set; }
         public bool IsComplete { get; set; }
 
-        [ForeignKey(nameof(Owner))]
+        //[ForeignKey(nameof(Owner))]
         public long OwnerId { get; set; }
         public Owner? Owner { get; set; }
     }
