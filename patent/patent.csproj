@@ -7,8 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Languages\Shared\NavMenu.gu.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Data\Images\head.png" />
     <Content Include="Data\Images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Languages\Shared\NavMenu.gu.resx" />
   </ItemGroup>
 
 </Project>
