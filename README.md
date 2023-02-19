@@ -18,8 +18,6 @@ To get started, follow these steps:
 4. Run the project.
 5. Open your web browser and navigate to `https://localhost:5000`.
 
-- View the list of items.
-
 ## Technologies Used
 
 - Blazor Server
