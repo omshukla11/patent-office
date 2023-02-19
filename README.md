@@ -1,7 +1,5 @@
 # Patent Office Prototype - Blazor Server Application using .NET 7.0
 
-This is a sample Blazor Server application built with .NET 7.0.
-
 ## Prerequisites
 
 Before running this application, ensure that you have the following installed on your machine:
